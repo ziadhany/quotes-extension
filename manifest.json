@@ -1,0 +1,35 @@
+{
+
+  "manifest_version": 2,
+  "name": "qoutes",
+  "description": "Firefox Extension with A collection of inspiring quotations",
+  "version": "1.0",
+  "homepage_url": "https://github.com/ziadhany/quotes-extension",
+  "icons": {
+    "48": "icons/link-48.png"
+  },
+
+  "permissions": ["notifications"],
+
+  "background": {
+    "scripts": ["background-script.js"]
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["qoutes.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/link-48.png",
+      "38": "icons/link-48.png"
+    },
+    "default_title": "Qoutes!",
+    "default_popup": "popup/choose_show_qoutes.html"
+  },
+
+  "default_locale": "en"
+}
